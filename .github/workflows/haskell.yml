@@ -21,13 +21,13 @@ jobs:
         cache-name: cache-stack
       with:
         path: ~/.stack
-        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/stack.yaml.lock') }} }}
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/stack.lock.yaml') }} }}
         restore-keys: |
           ${{ runner.os }}-build-${{ env.cache-name }}-
           ${{ runner.os }}-build-
           ${{ runner.os }}-
     - name: Run Tests
-      run: stack test
+      run: stack test --system-ghc
     - name: Build with Docker
       run: make
     - name: Deploy on AWS
