@@ -24,7 +24,7 @@ data Response = Response
     deriving (Generic, ToJSON)
 
 handler :: Event -> Context -> IO (Either String Response)
-handler Event {..} context =
+handler Event {..} _ =
   pure $ Right $ Response {statusCode = 200, body = (toBody . fmap sequenceUpTo) limit}
   where
     limit = extractLimit pathParameters >>= validateLimit
@@ -39,9 +39,9 @@ validateLimit n
   | otherwise = Just n
 
 single :: Int -> String
-single n = if result == "" then show n else result
+single n = if fizzBuzz == "" then show n else fizzBuzz
   where
-    result = intercalate "-" [result | (divisor, result) <- rules, n `mod` divisor == 0]
+    fizzBuzz = intercalate "-" [result | (divisor, result) <- rules, n `mod` divisor == 0]
     rules = [(3, "Fizz"), (5, "Buzz")]
 
 sequenceUpTo :: Int -> [String]
