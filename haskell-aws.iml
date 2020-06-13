@@ -5,6 +5,7 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/app" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/.stack-work" />
     </content>
     <orderEntry type="inheritedJdk" />
@@ -68,5 +69,19 @@
     <orderEntry type="library" name="async-2.2.2" level="project" />
     <orderEntry type="library" name="process-1.6.5.0" level="project" />
     <orderEntry type="library" name="zlib-0.6.2" level="project" />
+    <orderEntry type="library" name="QuickCheck-2.12.6.1" level="project" />
+    <orderEntry type="library" name="hspec-2.6.1" level="project" />
+    <orderEntry type="library" name="erf-2.0.0.0" level="project" />
+    <orderEntry type="library" name="tf-random-0.5" level="project" />
+    <orderEntry type="library" name="hspec-core-2.6.1" level="project" />
+    <orderEntry type="library" name="hspec-discover-2.6.1" level="project" />
+    <orderEntry type="library" name="hspec-expectations-0.8.2" level="project" />
+    <orderEntry type="library" name="HUnit-1.6.0.0" level="project" />
+    <orderEntry type="library" name="ansi-terminal-0.8.2" level="project" />
+    <orderEntry type="library" name="call-stack-0.1.0" level="project" />
+    <orderEntry type="library" name="clock-0.7.2" level="project" />
+    <orderEntry type="library" name="quickcheck-io-0.2.0" level="project" />
+    <orderEntry type="library" name="setenv-0.1.1.3" level="project" />
+    <orderEntry type="library" name="colour-2.3.5" level="project" />
   </component>
 </module>

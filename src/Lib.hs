@@ -21,7 +21,7 @@ data Response = Response
     { statusCode :: Int
     , body       :: String
     }
-    deriving (Generic, ToJSON)
+    deriving (Generic, ToJSON, Show, Eq)
 
 handler :: Event -> Context -> IO (Either String Response)
 handler Event {..} _ =
@@ -29,13 +29,16 @@ handler Event {..} _ =
   where
     limit = extractLimit pathParameters >>= validateLimit
 
+maxLimit :: Int
+maxLimit = 10000
+
 extractLimit :: PathParameters -> Maybe Int
 extractLimit params = HashMap.lookup "input" params >>= readMaybe
 
 validateLimit :: Int -> Maybe Int
 validateLimit n
   | n < 0 = Nothing
-  | n > 10000 = Nothing
+  | n > maxLimit = Nothing
   | otherwise = Just n
 
 single :: Int -> String
