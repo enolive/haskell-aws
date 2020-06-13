@@ -30,8 +30,8 @@ jobs:
       run: stack test --system-ghc
     - name: Build with Docker
       run: make
-    - name: Show Contents of lockfile
-      run: cat stack.yaml.lock
+    - name: Show files to cache
+      run: ls -lR ~/.stack
     - name: Deploy on AWS
       uses: serverless/github-action@master
       with:
