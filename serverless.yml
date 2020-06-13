@@ -30,8 +30,5 @@ functions:
     memorySize: 128
     events:
       - http:
-          path: fizz-buzz
-          method: get
-      - http:
-          path: fizz-buzz/{name}
+          path: fizz-buzz/{input}
           method: get

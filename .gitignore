@@ -3,3 +3,5 @@ haskell-aws.cabal
 build/
 *~
 .idea/libraries/
+out/
+.serverless/
